@@ -1,9 +1,9 @@
 // We only need to import the modules necessary for initial render
-import Layout from '../containers/Layout'
+import Layout from '../containers/Layout';
 
-import Home from './Home'
-
-import CounterRoute from './Counter'
+import Home from './Home';
+import CounterRoute from './Counter';
+import Warehouse from './Warehouse';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -13,7 +13,8 @@ export const createRoutes = (store) => ({
   component: Layout,
   indexRoute: Home,
   childRoutes: [
-    CounterRoute(store)
+    CounterRoute(store),
+    Warehouse(store),
   ]
 })
 

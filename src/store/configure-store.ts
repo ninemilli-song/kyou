@@ -9,7 +9,7 @@ import { routerMiddleware } from 'react-router-redux';
 
 import promiseMiddleware from '../middleware/promise-middleware';
 import logger from './logger';
-import makeRootReducer, {injectReducer} from './reducers';
+import makeRootReducer, { injectReducer } from './reducers';
 const rooterReducer = makeRootReducer({});
 function configureStore(initialState) {
   const store = compose(
