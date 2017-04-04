@@ -29,11 +29,14 @@ export const getList = () => {
 // ------------------------------------
 const ACTION_HANDLERS = {
     [WAREHOUSE_LIST]: (state, action) => {
-        return Object.assign({}, state, {
-            data: {
-                warehouse: action.data,
-            }
-        })
+        // return Object.assign({}, state, {
+        //     data: {
+        //         warehouseList: action.data,
+        //     }
+        // })
+        return state.set('data', Immutable.fromJS({
+            warehouseList: action.data,
+        }));
     }
 }
 
@@ -44,7 +47,7 @@ const mockWarehouseList = [];
 for (let i = 0; i < 100; i++) {
   mockWarehouseList.push({
     key: i,
-    name: `李大嘴${i}`,
+    name: `李式嘴${i}`,
     age: 32,
     address: `西湖区湖底公园${i}号`,
   });

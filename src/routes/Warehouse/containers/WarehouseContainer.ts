@@ -8,17 +8,16 @@
 
  const mapActionCreators = (dispatch) => {
      return {
-         testAction: (): void => dispatch(() => {
-             console.log('-------> test action warehouse');
-         }),
-         getList: () => {
-             dispatch(getList());
-         }
+         action: {
+             getList: () => {
+                 dispatch(getList());
+             },
+         },
      }
  }
 
  const mapStateToProps = (state) => ({
-     warehouse: state.warehouse,
+     store: state.warehouse,
  })
 
  export default connect(mapStateToProps, mapActionCreators)(Warehouse);

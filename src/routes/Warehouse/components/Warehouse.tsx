@@ -9,9 +9,13 @@ import WarehouseMainArea from './WarehouseMainArea';
 
 export default class Warehouse extends React.Component<any, any> {
     render(): JSX.Element {
-        const props = this.props;
+        const { store, action } = this.props;
 
-        console.log('Warehouse props: ', this.props);
+        const data = store.get('data');
+
+        const warehouseList = data.get('warehouseList');
+
+        console.log('warehouseList props: ', warehouseList.toJS());
 
         return (
             <div>
@@ -20,7 +24,7 @@ export default class Warehouse extends React.Component<any, any> {
                         <WarehouseCategory />
                     </Col>
                     <Col span={ 18 }>
-                        <WarehouseMainArea />
+                        <WarehouseMainArea data={ warehouseList.toJS() }/>
                     </Col>
                 </Row>
             </div>
@@ -28,8 +32,8 @@ export default class Warehouse extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        const { getList } = this.props;
+        const { action } = this.props;
 
-        getList();
+        action.getList();
     }
 }
