@@ -2,53 +2,72 @@
  * The grid to show Warehouse list
  */
  import * as React from 'react';
- import { Table, Column } from 'antd';
+ import { Table } from 'antd';
 
  interface WarehouseGridProps {
+     prefix?: string,
      data: any,
  }
 
  export default class WarehouseGrid extends React.Component<WarehouseGridProps, any> {
 
      static defaultProps = {
+         prefix: 'kyou-warehouse',
          data: [],
      }
 
      render(): JSX.Element {
-         const { data } = this.props;
+        const { data, prefix } = this.props;
 
-         const columns = [{
-            key: '1',
-            title: '姓名',
-            dataIndex: 'name',
-            width: 150,
-         }, {
-            key: '2',
-            title: '年龄',
-            dataIndex: 'age',
-            width: 150,
-         }, {
-            key: '3',
-            title: '住址',
-            dataIndex: 'address',
-         }];
+        const tableRowClass = prefix + '-rowCls';
 
-        //  const data = [];
-        //  for (let i = 0; i < 100; i++) {
-        //    data.push({
-        //      key: i,
-        //      name: `李大嘴${i}`,
-        //      age: 32,
-        //      address: `西湖区湖底公园${i}号`,
-        //    });
-        //  }
+        const columns = [
+            {
+                title: '编码',
+                width: 80,
+                key: 'code',
+                dataIndex: 'code',
+            }, {
+                title: '名称',
+                width: 200,
+                key: 'name',
+                dataIndex: 'name',
+            }, {
+                title: '分类',
+                width: 60,
+                key: 'category',
+                dataIndex: 'category',
+            }, {
+                title: '结账状态',
+                key: 'stop',
+                width: 100,
+                dataIndex: 'stop',
+                render: (text, record) => {
+                    const statusText = text ? '停用' : '未停用';
+                    return (<div>{ statusText }</div>);
+                },
+            }, {
+                title: '建立时间',
+                width: 100,
+                key: 'createDate',
+                dataIndex: 'createDate',
+            }, {
+                title: '备注',
+                key: 'comment',
+                dataIndex: 'comment',
+            }
+        ];
 
          return (
              <div>
                 <Table
+                    bordered
                     columns={ columns }
+                    rowClassName = {
+                        () => tableRowClass
+                    }
                     dataSource={ data }
-                    pagination={{ pageSize: 50 }}
+                    pagination={ true }
                     scroll={{ y: 300 }}
                 />
              </div>

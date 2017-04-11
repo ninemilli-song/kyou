@@ -8,7 +8,7 @@
  export default class WarehouseCategoryTree extends React.Component<any, any> {
 
     static defaultProps = {
-        prefix: 'warehouseCategoryTree',
+        prefix: 'kyou-warehouse-category',
         keys: [
             '0-0-0',
             '0-0-1',

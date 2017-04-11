@@ -2,7 +2,7 @@
   "globalDependencies": {
     "chai": "registry:dt/chai#3.4.0+20160317120654",
     "classnames": "registry:dt/classnames#0.0.0+20160316155526",
-    "enzyme": "registry:dt/enzyme#2.3.0+20160525083955",  
+    "enzyme": "registry:dt/enzyme#2.3.0+20160525083955",
     "react": "registry:dt/react#0.14.0+20160526134601",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
     "react-redux": "registry:dt/react-redux#4.4.0+20160501125835",
@@ -14,6 +14,5 @@
     "source-map": "registry:dt/source-map#0.0.0+20160317120654",
     "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
     "webpack": "registry:dt/webpack#1.12.9+20160523035535",
-    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160524142046"
   }
 }

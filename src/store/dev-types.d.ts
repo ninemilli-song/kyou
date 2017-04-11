@@ -1,7 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
-// Types for various development options.
-
 // A global boolean that turns on or off devmode in the client.
 declare let __DEV__: boolean;
 

@@ -2,16 +2,20 @@
   "compileOnSave": false,
   "buildOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
     "module": "commonjs",
     "target": "es6",
     "jsx": "react",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "removeComments": false,
     "sourceMap": false,
     "inlineSourceMap": true,
     "noEmitHelpers": false,
+    "moduleResolution": "node",
+    "types": [],
     "declaration": false
   },
   "awesomeTypescriptLoaderOptions": {
@@ -21,6 +25,7 @@
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "typings"
   ]
 }

@@ -3,6 +3,8 @@ const proxy = require('./server/webpack-dev-proxy')
 const loaders = require('./webpack/loaders')
 const plugins = require('./webpack/plugins')
 const postcssInit = require('./webpack/postcss')
+var ROOT_PATH = path.join(path.resolve(__dirname), './');
+const resolve = file => path.resolve(ROOT_PATH, file);
 
 const baseAppEntries = ['./src/index.tsx']
 const devAppEntries = [
@@ -43,7 +45,11 @@ module.exports = {
   },
 
   devtool: 'cheap-module-source-map',
-  resolve: { extensions: ['', '.webpack.js', '.web.js', '.tsx', '.ts', '.js'] },
+
+  resolveLoader: {root: resolve('./node_modules')},
+
+  resolve: { modulesDirectories: ['node_modules'], extensions: ['', '.webpack.js', '.web.js', '.tsx', '.ts', '.js'] },
+
   plugins,
 
   devServer: {
