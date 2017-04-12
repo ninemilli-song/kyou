@@ -8,20 +8,24 @@ import WarehouseCategory from './WarehouseCategory';
 import WarehouseMainArea from './WarehouseMainArea';
 
 export default class Warehouse extends React.Component<any, any> {
+
+    constructor (props, context) {
+        super(props, context);
+    }
+
     render(): JSX.Element {
         const { store, action } = this.props;
 
         const data = store.get('data');
 
         const warehouseList = data.get('warehouseList');
-
-        console.log('warehouseList props: ', warehouseList.toJS());
+        const warehouseCategory = data.get('category');
 
         return (
             <div>
-                <Row>
+                <Row gutter={ 16 }>
                     <Col span={ 6 }>
-                        <WarehouseCategory />
+                        <WarehouseCategory category={ warehouseCategory } />
                     </Col>
                     <Col span={ 18 }>
                         <WarehouseMainArea data={ warehouseList.toJS() }/>
@@ -35,5 +39,6 @@ export default class Warehouse extends React.Component<any, any> {
         const { action } = this.props;
 
         action.getList();
+        action.getCategory();
     }
 }
