@@ -29,9 +29,28 @@ exports.html = {
 exports.css = {
   test: /\.css$/,
   loader: process.env.NODE_ENV === 'development' ?
-    'style!css!postcss'
+    "style!css!postcss!sass"
     : ExtractTextPlugin.extract('style', 'css!postcss'),
   exclude: /node_modules/,
+}
+
+exports.less = {
+  test: /\.less$/,
+  loader: process.env.NODE_ENV === 'development' ?
+    "style!css!postcss!less"
+    : ExtractTextPlugin.extract('style', 'css!postcss'),
+  exclude: /node_modules/,
+}
+
+exports.scss = {
+  test: /\.scss$/,
+  loader: process.env.NODE_ENV === 'development' ?
+    'style!css!postcss!sass'
+    : ExtractTextPlugin.extract('style', 'css!postcss!sass'),
+  exclude: /node_modules/,
+  options: {
+    includePaths: [path.resolve('./src/styles')]
+  }
 }
 
 function makeUrlLoader (pattern) {

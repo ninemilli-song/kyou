@@ -17,9 +17,12 @@ export default class Warehouse extends React.Component<any, any> {
         const { store, action } = this.props;
 
         const data = store.get('data');
+        const uiState = store.get('ui');
 
         const warehouseList = data.get('warehouseList');
         const warehouseCategory = data.get('category');
+
+        const gridExpand = uiState.get('gridExpand');
 
         return (
             <div>
@@ -28,7 +31,10 @@ export default class Warehouse extends React.Component<any, any> {
                         <WarehouseCategory category={ warehouseCategory } />
                     </Col>
                     <Col span={ 18 }>
-                        <WarehouseMainArea data={ warehouseList.toJS() }/>
+                        <WarehouseMainArea
+                            expand={ gridExpand }
+                            data={ warehouseList.toJS() }
+                        />
                     </Col>
                 </Row>
             </div>

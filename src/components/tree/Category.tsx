@@ -144,8 +144,7 @@ export default class Category extends React.Component<CategoryProps, any> {
         data.forEach((item) => {
             if (!item.parentId || item.parentId === '0') {
                 treeData.push(item);
-            }
-            else {
+            } else {
                 childData.push(item);
             }
         });
@@ -158,13 +157,11 @@ export default class Category extends React.Component<CategoryProps, any> {
                     if (childDataItem.parentId === rootDataItem.id) {
                         if (rootDataItem.child) {
                             rootDataItem.child.push(childDataItem);
-                        }
-                        else {
+                        } else {
                             rootDataItem.child = [childDataItem];
                         }
                         nRootData.push(childDataItem);
-                    }
-                    else if (nChildData.indexOf(childDataItem) !== -1) {
+                    } else if (nChildData.indexOf(childDataItem) !== -1) {
                         nChildData.push(childDataItem);
                     }
                 });
@@ -197,11 +194,11 @@ export default class Category extends React.Component<CategoryProps, any> {
 
     // 创建分类
     private createCategory = () => {
-        //todo: 跳转通用分类编辑页面
+        // todo: 跳转通用分类编辑页面
     }
 
     // 编辑分类
     private editCategory = () => {
-        //todo: 跳转通用分类编辑页面
+        // todo: 跳转通用分类编辑页面
     }
 }

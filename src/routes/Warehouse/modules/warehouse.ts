@@ -122,7 +122,7 @@ const mockWarehouseCategory = [
 
 const initialState = Immutable.fromJS({
     ui: {
-
+        gridExpand: false,
     },
     data: {
         warehouseList: [],

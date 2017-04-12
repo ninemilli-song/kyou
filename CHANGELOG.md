@@ -1,3 +1,13 @@
+# 1.0.2
+
+`2017-04-12`
+
+* Support Sass and Less
+* fix bug:
+
+    - Remove `postcss-modules-local-by-default` plugin from /webpack/posscss.js to resolve the problem that the `postcss-modules-local-by-default` plugin cause classname turn to a random code when webpack compile finished.
+
+
 # 1.0.1
 
 `2017-04-10`
