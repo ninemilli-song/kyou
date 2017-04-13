@@ -5,10 +5,10 @@
 @import './layout.css';
 
 /* import public variable */
-/*@import './variable.css';*/
 
-/**********************************/
-/*******import modules style*******/
-/*********************************/
-/*@import "./warehouse.less";*/
+/* @import './variable.css'; */
+
+/* ******import modules style****** */
+
+/* @import "./warehouse.less"; */
 @import "./warehouse.scss";

@@ -1,3 +1,11 @@
+# 1.0.3
+
+`2017-04-13`
+
+* Upgrade the `stylelint-webpack-plugin` version to v0.7.0 and the `stylelint-config-standard` version to v16.0.6 to match the `stylelint` v7.0.0.
+
+* Regular the css to fellow the stylelint rules.
+
 # 1.0.2
 
 `2017-04-12`
